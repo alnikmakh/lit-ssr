@@ -4,16 +4,23 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev:client": "vite",
+    "dev": "node ssr-server.js",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
+    "build": "npm run build:client && npm run build:server",
+    "preview": "vite preview",
+    "serve": "NODE_ENV=production node ssr-server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/middie": "^9.0.3",
     "@fastify/static": "^7.0.4",
-    "fastify": "^4.27.0",
+    "@lit-labs/ssr": "^3.3.1",
+    "@lit-labs/ssr-client": "^1.1.7",
+    "fastify": "5.2.2",
     "lit": "^3.1.4"
   },
   "devDependencies": {

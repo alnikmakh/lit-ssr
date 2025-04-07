@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Lit</title>
-    <script type="module" src="/my-element.js"></script>
+    <title>Vite + Lit SSR</title>
+    <!-- Load the client entry script for hydration -->
+    <script type="module" src="/src/entry-client.js"></script>
   </head>
   <body>
     <h1>Welcome!</h1>
-    <my-element></my-element>
+    <!--ssr-outlet-->
   </body>
 </html> 
